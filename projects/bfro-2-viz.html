@@ -21,12 +21,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The Movies Project">
-  <meta property="og:description" content="This project has an individual showcase page, not just a direct link to the project site or repo. Now you have more space to describe your awesome project!">
-  <meta property="og:image" content="https://www.sketchappsources.com/resources/source-image/movie-badges-jurajjurik.png">
+  <meta property="og:title" content="Two Data Vis - Assignment 10">
+  <meta property="og:description" content="Multiple ways to use vega-lite in our Jekyll page.">
+  <meta property="og:image" content="assets/pngs/cars.png">
 
-  <title>The Movies Project</title>
-  <meta name="description" content="This project has an individual showcase page, not just a direct link to the project site or repo. Now you have more space to describe your awesome project!">
+  <title>Two Data Vis - Assignment 10</title>
+  <meta name="description" content="Multiple ways to use vega-lite in our Jekyll page.">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -73,21 +73,39 @@
 
 </nav>
     <div class="col-lg-10 mx-auto mt-5 markdown-body">
-  <h1 id="the-movies-project">The Movies Project</h1>
+  <h1 id="explanation">Explanation</h1>
 
-<p>The Movies Project is something like <strong>Netflix</strong>, the only difference is that <strong>it’s not real</strong>! It doesn’t exist! I just created it to demonstrate how the <strong>showcase</strong> page looks like and how you can write whatever you want with full markdown support.</p>
+<p>My first visualization is a scatter plot that demonstrates a positively correlated relationship between the low temperature variable and the dewpoint.</p>
 
-<p><img src="https://www.sketchappsources.com/resources/source-image/we-were-soldiers-landing-page-dbruggisser.jpg" alt="preview" /></p>
+<p>I tried many different variables in this scatter plot and found these two to demonstrate the best relationship. I am not sure how dew point is measured excatly, so I do not know if this is graphing redundant data. The way this data is set up makes me think that dew point is a calculation with temperature_low as one of its factors.</p>
 
-<h2 id="search-movies">Search Movies</h2>
+<p>I chose the interval selector here because I like the way it works as an interactive plot. I think making my two visualizations an interactive dashboard that work in unison was effective for this because it allowed me to grant greater insight about the distribution of the different ends of the spectrum for low temperatures and dew points.</p>
 
-<p><img src="https://www.sketchappsources.com/resources/source-image/microsoft-windows-10-virtual-keyboard-diogo-sousa.png" alt="search" /></p>
+<p>The histogram here demonstrates an identical color pattern but uses a an aggregate function that counts each occurance grouped by their “Season” value. I chose to include Unknown because I think it helps to keep our data interesting.</p>
 
-<p class="text-center">
-<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/YoussefRaafatNasry/portfolYOU">
-  Learn More
+<p>As the data are linked I will talk about the datasets mostly together.</p>
+
+<p>For my scatter plot I used quantitative encoding for both the X and the Y, and for my histogram I used quantitative for the count aggregation and nominal for the seasons, as seasons is a collection of strings.</p>
+
+<p>The interactivity here makes my dashboard interesting because you can modify the histogram with the interval selector. I really like this feature and would like to implement it with a more robust data set.</p>
+
+<p>I think out of all the visualization platforms we have used, vega-lite has been my favorite. It appears very full featured and the altair integration makes data modification (which I did not do here, but may do in the future) incredibly easy.</p>
+<vegachart schema-url="/assets/json/dash.json" style="width: 100%"></vegachart>
+
+<!-- these are written in a combo of html and liquid -->
+
+<div class="left">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/bfro_reports_fall2022.csv">
+  The Data
 </a>
-</p>
+</div>
+
+<div class="right">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/brvlncia/notebooks/blob/main/valencia-bryan-assignment10.ipynb">
+  The Analysis
+</a>
+</div>
+
 
 </div>
   </main>
@@ -105,6 +123,20 @@
   </small>
 
 </footer>
+
+
+<!-- Custom page specific js files -->
+  
+    <script src='/assets/js/vega.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-lite.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-embed.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/justcharts.js' type="text/javascript"></script>
+  
+
+
 
   
   <!-- GitHub Buttons -->
