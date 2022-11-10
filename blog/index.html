@@ -21,11 +21,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Bryan Valencia">
+  <meta property="og:title" content="Blog">
   <meta property="og:description" content="I hate LinkedIn.">
   <meta property="og:image" content="https://i.ibb.co/68LNpCZ/brvlncia.jpg">
 
-  <title>Bryan Valencia</title>
+  <title>Blog</title>
   <meta name="description" content="I hate LinkedIn.">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -61,7 +61,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/projects/">Projects</a>
 
-      <a class="nav-item nav-link " href="/blog/">Blog</a>
+      <a class="nav-item nav-link active" href="/blog/">Blog</a>
 
       <a class="nav-item nav-link " href="/about/">About</a>
 
@@ -72,22 +72,53 @@
   </div>
 
 </nav>
-    <div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
+    <!-- Simple-Jekyll-Search https://github.com/christian-fei/Simple-Jekyll-Search -->
 
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
-      <div id="dummy"></div>
-      <div id="element">
-        <img src="https://i.ibb.co/68LNpCZ/brvlncia.jpg" alt="Bryan Valencia" class="circle-image wow animated zoomIn" data-wow-delay=".1s" />
-      </div>
-    </div>
-
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">I hate LinkedIn.</p>
-
+<div class="input-group mt-5 px-3">
+  <input id="search-input" type="text" class="form-control search-box" placeholder="Search posts..">
+  <div class="input-group-append">
+    <span class="input-group-text border border-primary bg-primary text-white">
+      <i class="fas fa-search"></i>
+    </span>
   </div>
+  <button class="btn btn-outline-primary ml-1" onclick="location.href = '/blog/tags';">
+    <i class="fas fa-tags"></i>
+  </button>
 </div>
+<ul class="px-3" id="results-container"></ul>
 
+<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+<script>
+  var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        searchResultTemplate: '<a href="{url}" class="list-group-item list-group-item-action">{title}</a>',
+        noResultsText: '<li class="list-group-item list-group-item-action disabled">No results found</li>',
+        json: '/search.json'
+      })
+</script>
+<div class="card-group mt-2">
+
+  
+    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="/blog/do-not-go-gentle-into-that-good-night" class="post card bg-light">
+    <div class="card-body text-themed">
+      <h3 class="card-title">Do not go gentle into that good night</h3>
+      <p class="card-text">
+        
+        <span class="badge badge-dark">Poetry</span>
+        
+      </p>
+      <p class="card-text"><p>Do not go gentle into that good night,<br /> Old age should burn and rave at close of day;<br /> Rage, rage against the dying<small><i>  read more...</i></small></p>
+    </div>
+    <div class="card-footer text-themed">
+      17 April 2016
+    </div>
+  </a>
+</div>
+  
+  
+</div>
   </main>
   <footer class="mt-auto py-3 text-center">
 
